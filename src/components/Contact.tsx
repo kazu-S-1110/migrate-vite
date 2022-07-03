@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { FC } from "react";
 
-export const Contact = () => {
+type ContactProps = {
+  message: string;
+};
+
+export const Contact: FC<ContactProps> = ({ message }) => {
   return (
-    <div>Contact</div>
-  )
-}
+    <>
+      <div>Contact</div>
+      <p>{message}</p>
+    </>
+  );
+};
