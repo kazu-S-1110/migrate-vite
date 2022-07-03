@@ -6,6 +6,8 @@ import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Home } from "./components/Home";
 import { NotFound } from "./components/NotFound";
+import { Post } from "./components/Post";
+import { Posts } from "./components/Posts";
 
 function App() {
   return (
@@ -22,18 +24,10 @@ function App() {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => (isActive ? "active" : "nonActive")}
-            to="/about"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+            to="/posts"
           >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "nonActive")}
-            to="/contact"
-          >
-            Contact
+            Posts
           </NavLink>
         </li>
       </ul>
@@ -42,6 +36,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact message="hoge" />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route path="post" element={<Post />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
