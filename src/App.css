@@ -38,5 +38,9 @@
 } */
 
 .active {
-  color: rgb(30, 255, 206);
+  color: rgb(0, 129, 101);
+}
+
+.nonActive {
+  color: rgb(0, 149, 255);
 }

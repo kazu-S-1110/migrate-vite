@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import { About } from "./components/About";
@@ -12,13 +13,28 @@ function App() {
       <h1>React router v6</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "nonActive")}
+            to="/"
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "nonActive")}
+            to="/about"
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "nonActive")}
+            to="/contact"
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
 
